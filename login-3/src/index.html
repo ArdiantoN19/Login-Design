@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+
+    <!-- Link Box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="main-content container">
+        <div class="main-content__left">
+            <h3 class="main-content__left__logo">Dotwork&rsquo;</h3>
+            <div class="main-content__left__login">
+                <h1 class="main-content__left__login__title">Log in to your Account</h1>
+                <p class="main-content__left__login__paragraph">Welcome back! Select method to log in: </p>
+            </div>
+            <div class="main-content__left__method-login">
+                <button class="main-content__left__method-login__google">
+                    <img src="../public/assets/images/logo-google.png" alt="logo-google" width="20px">
+                    Google
+                </button>
+                <button class="main-content__left__method-login__facebook">
+                    <img src="../public/assets/images/logo-facebook.png" alt="logo-facebook" width="20px">
+                    Facebook
+                </button>
+            </div>
+            <div class="main-content__left__method-email">
+                <p class="main-content__left__method-email__continue">or continue with email</p>
+            </div>
+            <form action="" class="main-content__left__form">
+                <div class="main-content__left__form__input-group">
+                    <input type="email" id="email" class="main-content__left__form__input-group__input"
+                        placeholder="Email" required>
+                    <i class='bx bx-envelope bx-sm box-icon'></i>
+                    <label for="email" class="main-content__left__form__input-group__label"></label>
+                </div>
+                <div class="main-content__left__form__input-group">
+                    <input type="password" id="password" class="main-content__left__form__input-group__input"
+                        placeholder="password" pattern="[a-zA-Z0-9]{5,}" required>
+                    <i class='bx bx-lock-alt bx-sm box-icon'></i>
+                    <label for="password" class="main-content__left__form__input-group__label"></label>
+                </div>
+                <div class="main-content__left__form__select-group">
+                    <div class="main-content__left__form__select-group__remember">
+                        <input type="checkbox" name="remember" id="remember"
+                            class="main-content__left__form__select-group__remember__input">
+                        <label for="remember" class="main-content__left__form__select-group__remember__label">Remember
+                            me</label>
+                    </div>
+                    <a href="#" class="main-content__left__form__select-group__forgot">Forgot Password?</a>
+                </div>
+                <button type="submit" class="main-content__left__form__submit">Log in</button>
+            </form>
+
+            <p class="main-content__left__create">Don't have an account? <a href="#"
+                    class="main-content__left__create__account">Create an account</a></p>
+        </div>
+        <div class="main-content__right">
+            <img src="../public/assets/images/work.svg" alt="work" class="main-content__right__image">
+        </div>
+    </main>
+</body>
+
+</html>

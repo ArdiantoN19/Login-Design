@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+$Primary: #0a0a0a;
+$Secondary: rgba(195, 195, 195, 0.1);
+$Cool-grey: #c3c3c3;
+$Blue: #1a60e2;
+$Purple: #7900dc;
+$White: #ffffff;
+
+$Font-family: "Poppins", sans-serif;
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Font-family;
+  font-size: 1em;
+  font-style: normal;
+  color: $Primary;
+  background-color: $White;
+}
+
+.container {
+  padding: 15px 30px;
+}
+
+.sr-only {
+  position: absolute;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.main-content {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background-color: $White;
+
+  .main-content__left {
+    max-width: 650px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: auto;
+
+    .main-content__left__logo {
+      margin-bottom: 30px;
+      font-weight: 800;
+      font-size: 1.3em;
+    }
+
+    .main-content__left__create-account {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .main-content__left__paragraph {
+      font-size: 0.9em;
+      color: $Cool-grey;
+      margin-bottom: 20px;
+    }
+
+    .main-content__left__choice-login {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      gap: 15px;
+      flex-direction: column;
+      margin-bottom: 25px;
+
+      %btn {
+        cursor: pointer;
+        background-color: $Secondary;
+        outline: none;
+        border: 1px solid $Primary;
+        border-radius: 12px;
+        display: block;
+        font-size: 1em;
+        padding: 10px;
+      }
+
+      .main-content__left__choice-login__apple,
+      .main-content__left__choice-login__google {
+        @extend %btn;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    .main-content__left__or__choice {
+      position: relative;
+      width: 100%;
+      border: none;
+      border-top: 1px solid $Cool-grey;
+      margin-bottom: 20px;
+
+      .main-content__left__or__choice__span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -15px;
+        padding: 0 10px;
+        background-color: $White;
+      }
+    }
+
+    .main-content__left__form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      %input {
+        width: 100%;
+        display: block;
+        padding: 10px 13px;
+        background-color: $Secondary;
+        border: 1px solid $Cool-grey;
+        border-radius: 12px;
+        outline: none;
+      }
+
+      %input::placeholder {
+        color: $Cool-grey;
+      }
+
+      %input:focus {
+        border: 1px solid $Blue;
+        //   border-image: linear-gradient(to right, $Blue, $Purple) 20;
+        //   border-width: 1px;
+        //   border-style: solid;
+      }
+
+      .main-content__left__form__input-group {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        .main-content__left__form__input-group__input {
+          @extend %input;
+        }
+      }
+
+      .main-content__left__form__input {
+        @extend %input;
+      }
+
+      .main-content__left__form__check {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+        text-align: start;
+        width: 100%;
+      }
+
+      .main-content__left__form__submit {
+        outline: none;
+        border: none;
+        background-color: $Primary;
+        color: $White;
+        width: 100%;
+        padding: 10px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .main-content__left__form__submit:hover {
+        background-color: rgba(10, 10, 10, 0.8);
+      }
+    }
+
+    .main-content__left__already {
+      font-size: 0.9em;
+      width: 100%;
+
+      p {
+        text-align: center;
+      }
+
+      .main-content__left__already__login {
+        text-decoration: none;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .main-content__right {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .main-content__left {
+      width: calc(100% - 50%);
+      height: 100vh;
+
+      .main-content__left__logo {
+        margin-bottom: 20px;
+      }
+
+      .main-content__left__create-account {
+        font-size: 2em;
+        margin-bottom: 5px;
+      }
+
+      .main-content__left__paragraph {
+        margin-bottom: 15px;
+      }
+
+      .main-content__left__form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 10px;
+
+        .main-content__left__form__check {
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .main-content__right {
+      display: block;
+      width: calc(100% - 40%);
+      height: 100%;
+      padding: 15px 20px;
+
+      .main-content__right__wrapper-images {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $Blue;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.125);
+
+        #wrapper {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+          @mixin wrapper-image($url) {
+            width: 100%;
+            height: 100%;
+            background: url($url);
+            background-position: center;
+            background-size: cover;
+            background-repeat: none;
+            padding: 30px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            flex-direction: column;
+            transition: 0.8s ease-in-out;
+
+            %wrapper-image-profile {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 25px;
+              background-color: transparent;
+            }
+
+            .main-content__right__wrapper-images__image__profile {
+              background-color: transparent;
+              margin-bottom: 25px;
+
+              .main-content__right__wrapper-images__image__profile__header {
+                @extend %wrapper-image-profile;
+                margin-bottom: 20px;
+
+                .main-content__right__wrapper-images__image__profile__name,
+                .main-content__right__wrapper-images__image__profile__job {
+                  width: 100%;
+                  display: block;
+                  padding: 7px;
+                  border-radius: 20px;
+                  background-color: transparent;
+                  border: 1px solid $White;
+                  color: $White;
+                  text-align: center;
+                  font-size: 0.725em;
+                  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+                }
+              }
+
+              .main-content__right__wrapper-images__image__profile__desc {
+                background-color: transparent;
+                color: $White;
+                font-style: italic;
+                text-align: center;
+                width: 100%;
+                text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+                font-size: 1.3em;
+              }
+            }
+          }
+
+          .main-content__right__wrapper-images__image#image-1 {
+            @include wrapper-image(
+              "../images/john-mark-arnold-xbBaOa_dd5I-unsplash.jpg"
+            );
+          }
+          .main-content__right__wrapper-images__image#image-2 {
+            @include wrapper-image(
+              "../images/daria-pimkina-tYaccl19A3Q-unsplash.jpg"
+            );
+          }
+          .main-content__right__wrapper-images__image#image-3 {
+            @include wrapper-image(
+              "../images/paige-cody-zGmVI1VljO4-unsplash.jpg"
+            );
+          }
+        }
+
+        .main-content__right__wrapper-images__navigation {
+          position: absolute;
+          bottom: 4%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          width: 70%;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          background-color: transparent;
+          list-style-type: none;
+          z-index: 100;
+
+          .main-content__right__wrapper-images__navigation__item {
+            width: calc(100% / 4);
+            height: 8px;
+            border-radius: 3px;
+            background-color: #ecececc9;
+            cursor: pointer;
+            box-shadow: 1px 3px 10px $Secondary;
+          }
+
+          .main-content__right__wrapper-images__navigation__item:hover {
+            background-color: $White;
+          }
+
+          .main-content__right__wrapper-images__navigation__item.active {
+            background-color: $White;
+          }
+        }
+        // .main-content__right__wrapper-images__image#image-2 {
+        //   @include wrapper-image(
+        //     "../images/daria-pimkina-tYaccl19A3Q-unsplash.jpg"
+        //   );
+        // }
+        // .main-content__right__wrapper-images__image#image-3 {
+        //   @include wrapper-image(
+        //     "../images/paige-cody-zGmVI1VljO4-unsplash.jpg"
+        //   );
+        // }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 20px;
+    margin: auto;
+
+    .main-content__left {
+      width: calc(100% - 60%);
+      height: 100vh;
+
+      .main-content__left__logo {
+        margin-bottom: 30px;
+      }
+
+      .main-content__left__create-account {
+        font-size: 2em;
+        margin-bottom: 15px;
+      }
+
+      .main-content__left__paragraph {
+        margin-bottom: 20px;
+      }
+
+      .main-content__left__form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        .main-content__left__form__check {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .main-content__right {
+      display: block;
+      width: calc(100% - 50%);
+      height: 100%;
+      padding: 15px 20px;
+
+      .main-content__right__wrapper-images {
+        width: 100%;
+        background-color: $Blue;
+        height: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+
+        @mixin wrapper-image($url) {
+          padding: 30px 140px;
+        }
+
+        .main-content__right__wrapper-images__image {
+          @include wrapper-image(
+            "../images/john-mark-arnold-xbBaOa_dd5I-unsplash.jpg"
+          );
+        }
+      }
+    }
+  }
+}
